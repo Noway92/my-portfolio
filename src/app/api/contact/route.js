@@ -29,8 +29,8 @@ export async function POST(request) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
-    port: 465,          // Port SSL
-    secure: true,       // true pour le port 465
+    port: 587,          // Port TLS (recommandé par Google)
+    secure: false, 
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_PASS?.trim(), // Nettoie les espaces accidentels
@@ -58,7 +58,12 @@ export async function POST(request) {
 
     return new Response(
       JSON.stringify({ success: true, message: "Email envoyé avec succès" }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
+      { status: 200, headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // ou votre domaine en production
+        "Access-Control-Allow-Methods": "POST"
+      }}
+
     );
   } catch (err) {
     console.error("Erreur détaillée Nodemailer:", {

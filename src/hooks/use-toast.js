@@ -121,7 +121,7 @@ function toast(props) {
 }
 
 // Hook personnalisé pour les toasts
-export function useToast() {
+function useToast() {
   const [state, setState] = React.useState(memoryState);
 
   React.useEffect(() => {

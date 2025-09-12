@@ -18,7 +18,7 @@ const projects = [
     description: "This project aims to generate music using neural networks, specifically LSTM models, to predict note pitch and duration. Using this prediction, it is generating music from n notes.",
     image: "/projects/piano.jpg",
     tags: ["TensorFlow", "Pandas", "Matplotlib"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/Noway92/Piano-Generation",
   },
   {
     id: 3,

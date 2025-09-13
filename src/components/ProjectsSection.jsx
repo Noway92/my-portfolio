@@ -14,11 +14,7 @@ const projects = [
     githubUrl: "https://github.com/Noway92/TikTok-Generation",
     modalContent: {
       fullDescription: "Ce projet automatise la création complète de vidéos TikTok en 4 étapes:\n\n1. **Génération du scénario** via OpenAI (prompt engineered pour des scripts courts et engageants)\n2. **Création de l'avatar** avec HeyGen API (choix parmi 100+ avatars réalistes)\n3. **Montage automatique** en Python (FFmpeg) combinant:\n   - Vidéo de l'avatar\n   - Musique libre de droits (épurée via AudioSegment)\n   - Stock footage thématique\n   - Sous-titres animés\n4. **Optimisation** pour le format vertical 9:16\n\n**Chiffres clés** :\n- 50+ vidéos générées automatiquement\n- Temps de production réduit de 8h à 20 minutes par vidéo\n- Taux d'engagement moyen : 8.7% (vs 5% pour des vidéos manuelles)",
-      videoUrl: "https://www.youtube.com/embed/TON_ID_VIDEO", // Remplace par ton vrai ID YouTube
-      additionalImages: [
-        "/projects/tiktok-architecture.png", // Schéma d'architecture
-        "/projects/tiktok-example1.jpg"      // Exemple de vidéo générée
-      ]
+      videoUrl: "/modale/video/output_video_Mike.mp4", 
     }
   },
   {
@@ -30,7 +26,7 @@ const projects = [
     githubUrl: "https://github.com/Noway92/Piano-Generation",
     modalContent: {
       fullDescription: "Modèle de génération musicale basé sur des LSTM entraîné sur:\n- 1000 partitions MIDI de musique classique (Bach, Mozart, Chopin)\n- Architecture réseau :\n  - 2 couches LSTM (256 neurones chacune)\n  - Dropout (0.3) pour éviter l'overfitting\n  - Fonction de perte : cross-entropy\n\n**Processus de génération** :\n1. Entrée : séquence de 32 notes (seed)\n2. Prédiction note par note (température = 0.7 pour équilibre créativité/cohérence)\n3. Export MIDI → Conversion en WAV avec FluidSynth\n\n**Résultats** :\n- 85% des séquences générées sont musicalement cohérentes\n- Durée max : 2 minutes (limité par la décroissance de la qualité)\n- Style reconnaissable comme 'classique moderne'",
-      audioUrl: "/sounds/piano-generated-sample.mp3", // Fichier à placer dans /public/sounds/
+      audioUrl: "modale/audio/Music-piano-2.wav", 
       additionalImages: [
         "/projects/piano-lstm-diagram.png",  // Schéma du modèle LSTM
         "/projects/piano-loss-curve.png"     // Courbe d'apprentissage
@@ -134,7 +130,7 @@ export const ProjectsSection = () => {
       {/* Modale */}
       {selectedProject && (
       <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-        <div className="bg-card rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-border/20">
+        <div className="bg-card rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-border/20">
           {/* Header de la modale */}
           <div className="flex justify-between items-center p-6 border-b">
             <h3 className="text-2xl font-bold">{selectedProject.title}</h3>

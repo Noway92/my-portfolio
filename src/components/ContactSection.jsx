@@ -67,91 +67,91 @@ export const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            <div className="space-y-6 justify-center">
-              {/* Email */}
-              <div className="flex items-start space-x-4">
-                <a
-                  href="mailto:noe.le_yhuelic@edu.devinci.fr"
-                  className="flex items-start space-x-4 group"
-                >
-                  <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Email</h4>
-                    <p className="text-muted-foreground group-hover:text-primary">
-                      noe.le_yhuelic@edu.devinci.fr
-                    </p>
-                  </div>
-                </a>
-              </div>
+            <div className="space-y-6">
 
+              {/* Email */}
+              <a
+                href="mailto:noe.le_yhuelic@edu.devinci.fr"
+                className="flex items-start space-x-4 group"
+              >
+                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <Mail className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium group-hover:text-primary">Email</h4>
+                  <p className="text-muted-foreground group-hover:text-primary">
+                    noe.le_yhuelic@edu.devinci.fr
+                  </p>
+                </div>
+              </a>
 
               {/* Phone */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
+              <a
+                href="tel:+33769624396"
+                className="flex items-start space-x-4 group"
+              >
+                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Phone</h4>
-                  <a
-                    href="tel:+33769624396"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
+                  <h4 className="font-medium group-hover:text-primary">Phone</h4>
+                  <p className="text-muted-foreground group-hover:text-primary">
                     +33 7 69 62 43 96
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
 
-              {/* Location */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
+              {/* Location*/}
+              <a
+                href="https://www.google.com/maps/place/Paris,+France"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 group"
+              >
+                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground">Paris, France</p>
+                  <h4 className="font-medium group-hover:text-primary">Location</h4>
+                  <p className="text-muted-foreground group-hover:text-primary">Paris, France</p>
                 </div>
-              </div>
+              
+              </a>
 
               {/* LinkedIn */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
+              <a
+                href="https://www.linkedin.com/in/no%C3%A9-le-yhuelic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 group"
+              >
+                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <Linkedin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">
-                    <a
-                      href="https://www.linkedin.com/in/no%C3%A9-le-yhuelic/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors"
-                    >
-                      LinkedIn
-                    </a>
-                  </h4>
-                  <p className="text-muted-foreground">Noé Le Yhuelic</p>
+                  <h4 className="font-medium group-hover:text-primary">LinkedIn</h4>
+                  <p className="text-muted-foreground group-hover:text-primary">Noé Le Yhuelic</p>
                 </div>
-              </div>
+              </a>
 
               {/* CV Download */}
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
+              <a
+                href="/documents/NoeLeYhuelicCVanglais.pdf"
+                download
+                className="flex items-start space-x-4 group"
+              >
+                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <Download className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">CV</h4>
-                  <a
-                    href="/documents/NoeLeYhuelicCVanglais.pdf" // Chemin mis à jour
-                    download
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Download my CV
-                  </a>
+                  <h4 className="font-medium group-hover:text-primary">CV</h4>
+                  <p className="text-muted-foreground group-hover:text-primary">Download my CV</p>
                 </div>
-              </div>
+              </a>
+
             </div>
           </div>
+
 
           {/* Formulaire */}
           <div className="bg-card p-8 rounded-lg shadow-xs">

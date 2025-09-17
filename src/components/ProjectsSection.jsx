@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, ExternalLink, Github, Smile,X, Download } from "lucide-react";
+import { ArrowRight, ExternalLink, Github,X, Download } from "lucide-react";
 import Image from "next/image";
 
 const projects = [
@@ -65,7 +65,7 @@ export const ProjectsSection = () => {
         </h2>
         <div className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           <div>Here are some of my projects!</div>
-          <div>You will find a lot of them so be gentle and do not judge <Smile className="inline" /></div>
+          <div>Each of these projects was crafted with passion, creativity, and attention to detail. </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

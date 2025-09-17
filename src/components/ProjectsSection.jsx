@@ -26,10 +26,12 @@ const projects = [
     githubUrl: "https://github.com/Noway92/Piano-Generation",
     modalContent: {
       fullDescription: "Modèle de génération musicale basé sur des LSTM entraîné sur:\n- 1000 partitions MIDI de musique classique (Bach, Mozart, Chopin)\n- Architecture réseau :\n  - 2 couches LSTM (256 neurones chacune)\n  - Dropout (0.3) pour éviter l'overfitting\n  - Fonction de perte : cross-entropy\n\n**Processus de génération** :\n1. Entrée : séquence de 32 notes (seed)\n2. Prédiction note par note (température = 0.7 pour équilibre créativité/cohérence)\n3. Export MIDI → Conversion en WAV avec FluidSynth\n\n**Résultats** :\n- 85% des séquences générées sont musicalement cohérentes\n- Durée max : 2 minutes (limité par la décroissance de la qualité)\n- Style reconnaissable comme 'classique moderne'",
-      audioUrl: "modale/audio/Music-piano-2.wav", 
+      audioUrl: "/modale/audio/Music-piano-2.wav", 
       additionalImages: [
-        "/projects/piano-lstm-diagram.png",  // Schéma du modèle LSTM
-        "/projects/piano-loss-curve.png"     // Courbe d'apprentissage
+        "/modale/image/LSTM_model_Two_output.png", // Courbe d'apprentissage
+        "/modale/image/LSTM_model_One_output.png", // Courbe d'apprentissage
+        "/modale/image/graphs_comparing_models.png"// Schéma du modèle LSTM
+
       ]
     }
   },
@@ -43,8 +45,8 @@ const projects = [
     modalContent: {
       fullDescription: "Ce dépôt contient 4 projets clés développés en Python:\n\n1. **Algorithmes de recherche** :\n   - Implémentation de A*, Dijkstra, et BFS\n   - Visualisation avec Matplotlib (labyrinthes générés aléatoirement)\n   - Comparaison des performances (temps/mémoire)\n\n2. **Algorithmes génétiques** :\n   - Résolution du problème du voyageur de commerce\n   - Sélection par tournoi, croisement ordonné, mutation par inversion\n   - Meilleure solution trouvée : 12% plus optimale que l'aléatoire\n\n3. **Classifieur bayésien** :\n   - Détection de spam (précision : 92% sur le dataset SpamAssassin)\n   - Avec et sans lissage de Laplace (comparaison)\n\n4. **Réseau de neurones basique** :\n   - Classifieur pour MNIST (précision : 95% après 20 epochs)\n   - Implémentation from scratch (sans TensorFlow)\n\n**Compétences acquises** :\n- Maîtrise des structures de données avancées\n- Optimisation d'algorithmes (complexité temporelle)\n- Visualisation de données scientifiques",
       additionalImages: [
-        "/projects/ai-pathfinding.gif",  // Animation de l'algo A*
-        "/projects/ai-genetic-plot.png"  // Courbe de convergence
+        "/modale/image/Genetic_Algorithm.png",  
+        "/modale/image/Reinforcement_learning.png"  
       ]
     }
   }
@@ -210,7 +212,8 @@ export const ProjectsSection = () => {
                         alt={`Détail ${index + 1} - ${selectedProject.title}`}
                         width={500}
                         height={300}
-                        className="w-full h-48 object-cover transition-transform hover:scale-[1.02]"
+                        //className="w-full h-48 object-cover transition-transform hover:scale-[1.02]"
+                        className="w-full h-48 object-contain bg-black transition-transform hover:scale-[1.02]"
                       />
                     </div>
                   ))}

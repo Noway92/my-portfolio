@@ -70,19 +70,22 @@ export const ContactSection = () => {
             <div className="space-y-6 justify-center">
               {/* Email */}
               <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Email</h4>
-                  <a
-                    href="mailto:noe.le_yhuelic@edu.devinci.fr"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    noe.le_yhuelic@edu.devinci.fr
-                  </a>
-                </div>
+                <a
+                  href="mailto:noe.le_yhuelic@edu.devinci.fr"
+                  className="flex items-start space-x-4 group"
+                >
+                  <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Email</h4>
+                    <p className="text-muted-foreground group-hover:text-primary">
+                      noe.le_yhuelic@edu.devinci.fr
+                    </p>
+                  </div>
+                </a>
               </div>
+
 
               {/* Phone */}
               <div className="flex items-start space-x-4">

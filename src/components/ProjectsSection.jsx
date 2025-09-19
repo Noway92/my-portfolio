@@ -13,7 +13,7 @@ const projects = [
     tags: ["Python", "OPEN AI", "Rest API"],
     githubUrl: "https://github.com/Noway92/TikTok-Generation",
     modalContent: {
-      fullDescription: "Ce projet automatise la création complète de vidéos TikTok en 4 étapes:\n\n1. **Génération du scénario** via OpenAI (prompt engineered pour des scripts courts et engageants)\n2. **Création de l'avatar** avec HeyGen API (choix parmi 100+ avatars réalistes)\n3. **Montage automatique** en Python (FFmpeg) combinant:\n   - Vidéo de l'avatar\n   - Musique libre de droits (épurée via AudioSegment)\n   - Stock footage thématique\n   - Sous-titres animés\n4. **Optimisation** pour le format vertical 9:16\n\n**Chiffres clés** :\n- 50+ vidéos générées automatiquement\n- Temps de production réduit de 8h à 20 minutes par vidéo\n- Taux d'engagement moyen : 8.7% (vs 5% pour des vidéos manuelles)",
+      fullDescription: "This project fully automates TikTok video creation through 4 key steps:\n\n1. Script generation via OpenAI (custom-engineered prompts for short, engaging narratives)\n2. Avatar creation using HeyGen API (100+ realistic avatar options)\n3. Automated editing in Python (FFmpeg/MoviePy) combining:\n   - Avatar video footage\n   - Royalty-free music (cleaned with AudioSegment)\n   - Satisfying stock clips\n   - Animated subtitles\n4. Optimization for 9:16 vertical format\n\nKey metrics:\n- 50+ videos auto-generated\n- Production time : 30 minutes\n- Cost : 20 cents/video",
       videoUrl: "/modale/video/output_video_Mike.mp4", 
     }
   },
@@ -25,7 +25,7 @@ const projects = [
     tags: ["TensorFlow", "Pandas", "Matplotlib"],
     githubUrl: "https://github.com/Noway92/Piano-Generation",
     modalContent: {
-      fullDescription: "Modèle de génération musicale basé sur des LSTM entraîné sur:\n- 1000 partitions MIDI de musique classique (Bach, Mozart, Chopin)\n- Architecture réseau :\n  - 2 couches LSTM (256 neurones chacune)\n  - Dropout (0.3) pour éviter l'overfitting\n  - Fonction de perte : cross-entropy\n\n**Processus de génération** :\n1. Entrée : séquence de 32 notes (seed)\n2. Prédiction note par note (température = 0.7 pour équilibre créativité/cohérence)\n3. Export MIDI → Conversion en WAV avec FluidSynth\n\n**Résultats** :\n- 85% des séquences générées sont musicalement cohérentes\n- Durée max : 2 minutes (limité par la décroissance de la qualité)\n- Style reconnaissable comme 'classique moderne'",
+      fullDescription: "This project aims to generate music using neural networks, specifically LSTM models, to predict note pitch and duration. MIDI files from the 'Dataset' folder serve as the dataset. \nThe process involves extracting musical information from MIDI files, creating a structured dataframe, and mapping pitches for model input. \nThree LSTM models are built and compared: one without embedding, one with embedding for notes concatenated with duration, and one predicting only notes using embedding with a fixed duration. \nTraining incorporates a custom batch generation function and manual early stopping and checkpointing. T\nhe trained models generate music sequences from a seed, saved as MIDI files and converted to WAV for playback. \nModels with two outputs are evaluated based on their validation loss and further compared to a model with one output. \nThe subjective quality of the generated music is assessed via audio playback. \nThe project demonstrates the use of LSTM networks for musical sequence generation, highlighting the importance of data pre-processing and model architecture. \n\nExplanation of the graph below : \n1. Embedding-based models outperformed raw input models in the long term, demonstrating the advantage of learned pitch representations for musical understanding.\n2. The embedding-only model (green line) achieved the lowest validation loss, showing that simplifying the output space (predicting only pitch) leads to better pitch modeling and more stable training.\n3. The dual-output embedding model (red line) improved steadily but was slightly constrained by the added task of predicting duration.\n4. The raw input model (blue line) showed faster early learning but plateaued earlier, suggesting a limited capacity to generalize musical structure without embeddings.\n\nLooking forward, this system provides a strong foundation for more advanced musical modeling, including genre adaptation, multi-instrument composition, or real-time human-in-the-loop improvisation systems. The modular architecture also opens doors to extensions with Transformer models and attention mechanisms.",
       audioUrl: "/modale/audio/Music-piano-2.wav", 
       additionalImages: [
         "/modale/image/LSTM_model_Two_output.png", // Courbe d'apprentissage
@@ -43,7 +43,7 @@ const projects = [
     tags: ["Scikit-learn", "Pandas", "Numpy"],
     githubUrl: "https://github.com/Noway92/Ai-Algorithms",
     modalContent: {
-      fullDescription: "Ce dépôt contient 4 projets clés développés en Python:\n\n1. **Algorithmes de recherche** :\n   - Implémentation de A*, Dijkstra, et BFS\n   - Visualisation avec Matplotlib (labyrinthes générés aléatoirement)\n   - Comparaison des performances (temps/mémoire)\n\n2. **Algorithmes génétiques** :\n   - Résolution du problème du voyageur de commerce\n   - Sélection par tournoi, croisement ordonné, mutation par inversion\n   - Meilleure solution trouvée : 12% plus optimale que l'aléatoire\n\n3. **Classifieur bayésien** :\n   - Détection de spam (précision : 92% sur le dataset SpamAssassin)\n   - Avec et sans lissage de Laplace (comparaison)\n\n4. **Réseau de neurones basique** :\n   - Classifieur pour MNIST (précision : 95% après 20 epochs)\n   - Implémentation from scratch (sans TensorFlow)\n\n**Compétences acquises** :\n- Maîtrise des structures de données avancées\n- Optimisation d'algorithmes (complexité temporelle)\n- Visualisation de données scientifiques",
+      fullDescription: "This repository contains four projects I developed during my 4th year at ESILV, as part of my specialization in Data and Artificial Intelligence. \n\nThe repository includes four Jupyter notebooks: \n\n- Search Algorithms: Implementation of informed and uninformed search strategies (Uniform Cost Search, A* Algorithm, and Breadth-First Search) to find the shortest solution path for the 8-Puzzle Problem.\n- Genetic Algorithm: Optimization of a Neural Network using evolutionary techniques.\n- Reinforcement Learning: Training an agent to complete the FrozenLake-v1 environment using reinforcement learning methods.\n- Constraint Satisfaction Problem (CSP): Solving the Battleship Solitaire Puzzle with constraint programming techniques.",
       additionalImages: [
         "/modale/image/Genetic_Algorithm.png",  
         "/modale/image/Reinforcement_learning.png"  
@@ -188,13 +188,13 @@ export const ProjectsSection = () => {
                     onError={(e) => console.error("Erreur audio", e)}
                   >
                     <p>
-                      Audio non disponible. <a href={selectedProject.modalContent.audioUrl} download>Télécharger</a>.
+                      Audio not avaible. <a href={selectedProject.modalContent.audioUrl} download>Download</a>.
                     </p>
                   </audio>
                 </div>
               ) : (
                 <div className="bg-secondary/20 p-4 rounded-lg text-center text-sm">
-                  Pas de média disponible
+                  Media not avaible
                 </div>
               )}
             </div>
@@ -203,7 +203,7 @@ export const ProjectsSection = () => {
             {/* Images supplémentaires */}
             {selectedProject.modalContent.additionalImages?.length > 0 && (
               <div className="mb-6">
-                <h4 className="font-medium mb-3">Galerie</h4>
+                <h4 className="font-medium mb-3">Gallery</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedProject.modalContent.additionalImages.map((img, index) => (
                     <div key={index} className="rounded-lg overflow-hidden">
@@ -242,7 +242,7 @@ export const ProjectsSection = () => {
                   className="flex-1 cosmic-button flex items-center justify-center gap-2"
                 >
                   <Github size={16} />
-                  Code source
+                  Source Code
                 </a>
               )}
 
@@ -253,7 +253,7 @@ export const ProjectsSection = () => {
                   className="flex-1 border border-border bg-secondary hover:bg-secondary/80 text-secondary-foreground hover:text-foreground transition-colors py-2 px-4 rounded-md flex items-center justify-center gap-2"
                 >
                   <Download size={16} />
-                  Télécharger
+                  Download
                 </a>
               )}
             </div>

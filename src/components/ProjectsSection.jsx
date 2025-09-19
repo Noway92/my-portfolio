@@ -167,19 +167,21 @@ export const ProjectsSection = () => {
             {/* Bloc multimédia (vidéo OU audio) */}
             <div className="mb-6">
               {selectedProject?.modalContent?.videoUrl ? (
-                <div className="aspect-video rounded-lg overflow-hidden">
-                  <iframe
-                    src={selectedProject.modalContent.videoUrl}
-                    className="w-full h-full"
-                    allow="..."
-                    title={`${selectedProject.title} - Démo`}
-                    onError={(e) => {
-                      console.error("Erreur vidéo", e);
-                      return <div className="bg-red-100 p-4">Erreur de lecture</div>;
-                    }}
-                  />
-                </div>
-              ) : selectedProject?.modalContent?.audioUrl ? (
+                  <div className="space-y-4">
+                    <div className="aspect-video rounded-lg overflow-hidden">
+                      <video
+                        controls
+                        src={selectedProject.modalContent.videoUrl}
+                        className="w-full h-full"
+                        onError={(e) => console.error("Erreur vidéo", e)}
+                      >
+                        <p>
+                          Video not available. Click below to download the video.
+                        </p>
+                      </video>
+                    </div>
+                  </div>
+                ) :  selectedProject?.modalContent?.audioUrl ? (
                 <div className="bg-secondary/30 rounded-lg p-4">
                   <audio
                     controls
@@ -188,7 +190,7 @@ export const ProjectsSection = () => {
                     onError={(e) => console.error("Erreur audio", e)}
                   >
                     <p>
-                      Audio not avaible. <a href={selectedProject.modalContent.audioUrl} download>Download</a>.
+                      Audio not avaible. Click below to download the audio.
                     </p>
                   </audio>
                 </div>
@@ -253,7 +255,18 @@ export const ProjectsSection = () => {
                   className="flex-1 border border-border bg-secondary hover:bg-secondary/80 text-secondary-foreground hover:text-foreground transition-colors py-2 px-4 rounded-md flex items-center justify-center gap-2"
                 >
                   <Download size={16} />
-                  Download
+                  Download Audio
+                </a>
+              )}
+
+              {selectedProject.modalContent.videoUrl && (
+                <a
+                  href={selectedProject.modalContent.videoUrl}
+                  download
+                  className="flex-1 border border-border bg-secondary hover:bg-secondary/80 text-secondary-foreground hover:text-foreground transition-colors py-2 px-4 rounded-md flex items-center justify-center gap-2"
+                >
+                  <Download size={16} />
+                  Download Video
                 </a>
               )}
             </div>

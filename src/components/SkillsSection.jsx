@@ -5,33 +5,39 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // Programming Languages
-  { name: "Python", level: 90, category: "programming" },
-  { name: "C#", level: 90, category: "programming" },
-  { name: "Java", level: 70, category: "programming" },
-  { name: "JavaScript", level: 70, category: "programming" },
-  { name: "React", level: 70, category: "programming" },
+  { name: "Python", category: "programming" },
+  { name: "C#", category: "programming" },
+  { name: "Java", category: "programming" },
+  { name: "JavaScript", category: "programming" },
+  { name: "React", category: "programming" },
   // Deep Learning / Data Science
-  { name: "PyTorch", level: 60, category: "datascience" },
-  { name: "TensorFlow", level: 80, category: "datascience" },
-  { name: "Scikit-learn", level: 90, category: "datascience" },
-  { name: "Pandas", level: 95, category: "datascience" },
-  { name: "Hugging Face", level: 75, category: "datascience" },
-  { name: "Kaggle", level: 70, category: "datascience" },
+  { name: "TensorFlow", category: "datascience" },
+  { name: "PyTorch", category: "datascience" },
+  { name: "Scikit-learn", category: "datascience" },
+  { name: "Pandas", category: "datascience" },
+  { name: "Numpy", category: "datascience" },
+  { name: "Hugging Face", category: "datascience" },
+  { name: "Kaggle", category: "datascience" },
   // Data Visualisation
-  { name: "Tableau", level: 85, category: "dataviz" },
-  { name: "Matplotlib", level: 80, category: "dataviz" },
-  { name: "Seaborn", level: 70, category: "dataviz" },
+  { name: "Tableau", category: "dataviz" },
+  { name: "PowerBi", category: "dataviz" },
+  { name: "Matplotlib", category: "dataviz" },
+  { name: "Seaborn", category: "dataviz" },
   // Databases
-  { name: "SQL (MySQL)", level: 80, category: "databases" },
-  { name: "SQL (Oracle)", level: 80, category: "databases" },
-  { name: "MongoDB", level: 70, category: "databases" },
-  { name: "Elasticsearch", level: 70, category: "databases" },
+  { name: "MySQL", category: "databases" },
+  { name: "Oracle", category: "databases" },
+  { name: "MongoDB", category: "databases" },
+  { name: "Elasticsearch", category: "databases" },
+  { name: "Cassandra", category: "databases" },
+  { name: "Neo4j", category: "databases" },
   // Tools & Methodologies
-  { name: "Jira", level: 80, category: "tools" },
-  { name: "GitLab/GitHub", level: 90, category: "tools" },
-  { name: "CAMUNDA (BPMN)", level: 80, category: "tools" },
-  { name: "Microsoft Office", level: 90, category: "tools" },
+  { name: "Jira", category: "tools" },
+  { name: "GitLab/GitHub", category: "tools" },
+  { name: "Docker", category: "tools" },
+  { name: "CAMUNDA (BPMN)", category: "tools" },
+  { name: "Microsoft Office", category: "tools" },
 ];
+
 
 const categories = ["all", "programming", "datascience", "dataviz", "databases", "tools"];
 
@@ -63,28 +69,18 @@ export const SkillsSection = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill) => (
-            <div
-              key={skill.name}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
-            >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
-            </div>
-          ))}
+        <div className="p-6">
+          <div className="flex flex-wrap gap-2 s-4">
+            {filteredSkills.map((skill) => (
+              <span
+                key={skill.name}
+                className="px-4 py-2 text-base font-semibold border rounded-full bg-secondary text-secondary-foreground"
+              >
+                {skill.name}
+              </span>
+
+            ))}
+          </div>
         </div>
       </div>
     </section>

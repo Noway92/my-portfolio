@@ -49,6 +49,21 @@ const projects = [
         "/modale/image/Reinforcement_learning.png"  
       ]
     }
+  },
+  {
+    id: 4,
+    title: "RAG for job offers",
+    description: "This project implements a Retrieval-Augmented Generation (RAG) workflow that retrieves, processes, and analyzes job offers from the Civiweb API. It leverages OpenAI’s API to enhance or summarize the collected data, enabling smarter insights or automated Q&A over job postings.",
+    image: "/projects/Image-RAG.webp",
+    tags: ["OpenAI", "Requests ", "Numpy"],
+    githubUrl: "https://github.com/Noway92/RAG-VIE",
+    modalContent: {
+      fullDescription: "This project aims to look faster for VIE which is a French government program that allows young professionals to work abroad for a company.\n It is allowing the user to ask a question about all job offers throug 4 key steps :\n\n1. API Data Collection: Fetches recent job offers from the Civiweb API using structured JSON POST requests.\n2.Offer Details Retrieval: Retrieves detailed information for each offer by its unique ID.\n3.Data Handling: Handles pagination, data structuring, and filtering for later processing.\n4.OpenAI Integration: Uses the OpenAI API to process or summarize job offer data — part of the RAG (Retrieval-Augmented Generation) pipeline.",
+      additionalImages: [ 
+        "/modale/image/rag-with-llms.gif",
+        "/modale/image/Rag_Reponse.png"
+      ]
+    }
   }
 ];
 

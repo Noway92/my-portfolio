@@ -9,6 +9,7 @@ const skills = [
   { name: "C#", category: "programming" },
   { name: "Java", category: "programming" },
   { name: "JavaScript", category: "programming" },
+  { name: "TypeScript", category: "programming" },
   { name: "React", category: "programming" },
   // Deep Learning / Data Science
   { name: "TensorFlow", category: "datascience" },
@@ -20,7 +21,7 @@ const skills = [
   { name: "Kaggle", category: "datascience" },
   // Data Visualisation
   { name: "Tableau", category: "dataviz" },
-  { name: "PowerBi", category: "dataviz" },
+  { name: "PowerBI", category: "dataviz" },
   { name: "Matplotlib", category: "dataviz" },
   { name: "Seaborn", category: "dataviz" },
   // Databases

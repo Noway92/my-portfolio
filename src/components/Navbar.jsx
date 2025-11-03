@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 import { useEffect, useState } from "react";
 import Link from "next/link"; // <-- Remplace les balises <a> par <Link>
 
@@ -42,7 +43,7 @@ export const Navbar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between !px-0 ">
         <Link
           href="/#hero" // <-- Utilise Link avec un chemin absolu
           className="text-xl font-bold text-primary flex items-center"
@@ -64,6 +65,11 @@ export const Navbar = () => {
               {item.name}
             </Link>
           ))}
+        </div>
+
+        {/* Theme toggle (desktop) */}
+        <div className="hidden md:flex items-center">
+          <ThemeToggle/>
         </div>
 
         {/* Bouton mobile */}

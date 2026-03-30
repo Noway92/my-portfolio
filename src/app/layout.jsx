@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import "@/app/globals.css"; // Remplace ton ancien index.css
 import { Inter } from "next/font/google"; // Exemple avec une police Google
+import { Analytics } from "@vercel/analytics/next";
 
 // Configuration d'une police (optionnel)
 const inter = Inter({ subsets: ["latin"] });
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <body>
         <Toaster /> {/* Place le Toaster ici pour qu'il soit global */}
         {children}  {/* Contenu dynamique des pages (Home, NotFound, etc.) */}
+        <Analytics />
       </body>
     </html>
   );

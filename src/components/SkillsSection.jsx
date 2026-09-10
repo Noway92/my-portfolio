@@ -22,6 +22,7 @@ const skills = [
   { name: "Hugging Face", category: "datascience" },
   { name: "Kaggle", category: "datascience" },
   { name: "MCP Server", category: "datascience" },
+  { name: "LangChain/LanGraph", category: "datascience" },
   // Data Visualisation
   { name: "Tableau", category: "dataviz" },
   { name: "PowerBI", category: "dataviz" },
@@ -41,13 +42,20 @@ const skills = [
   // Tools & Methodologies
   { name: "Jira", category: "tools" },
   { name: "GitLab/GitHub", category: "tools" },
-  { name: "Docker", category: "tools" },
   { name: "CAMUNDA (BPMN)", category: "tools" },
   { name: "Microsoft Office", category: "tools" },
+  // DevOps & Cloud
+  { name: "Docker", category: "devops" },
+  { name: "Ansible", category: "devops" },
+  { name: "JFrog", category: "devops" },
+  { name: "SonarQube", category: "devops" },
+  { name: "Vault", category: "devops" },
+  { name: "AWS", category: "devops" },
+  { name: "GitLab CI/CD", category: "devops" },
 ];
 
 
-const categories = ["all", "programming", "datascience", "dataviz", "databases", "tools"];
+const categories = ["all", "programming", "datascience", "dataviz", "databases", "tools", "devops"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");

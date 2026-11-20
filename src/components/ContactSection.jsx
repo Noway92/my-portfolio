@@ -71,7 +71,7 @@ export const ContactSection = () => {
 
               {/* Email */}
               <a
-                href="mailto:noe.le_yhuelic@edu.devinci.fr"
+                href="mailto:noe.leyhuelic@outlook.fr"
                 className="flex items-start space-x-4 group"
               >
                 <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -80,7 +80,7 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium group-hover:text-primary">Email</h4>
                   <p className="text-muted-foreground group-hover:text-primary">
-                    noe.le_yhuelic@edu.devinci.fr
+                    noe.leyhuelic@outlook.fr
                   </p>
                 </div>
               </a>
@@ -136,7 +136,7 @@ export const ContactSection = () => {
 
               {/* CV Download */}
               <a
-                href="/documents/NoeLeYhuelicCVanglais.pdf"
+                href="/documents/CV Noé Le Yhuelic.pdf"
                 download
                 className="flex items-start space-x-4 group"
               >
@@ -183,7 +183,7 @@ export const ContactSection = () => {
                   name="email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary" // Typo corrigée
-                  placeholder="noe.le_yhuelic@edu.devinci.fr"
+                  placeholder="noe.leyhuelic@outlook.fr"
                 />
               </div>
 

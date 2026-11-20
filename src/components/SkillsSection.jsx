@@ -7,8 +7,7 @@ const skills = [
   // Programming Languages
   { name: "Python", category: "programming" },
   { name: "C#", category: "programming" },
-  { name: "Java", category: "programming" },
-  { name: "JavaScript", category: "programming" },
+  { name: "Java(Spring Boot)", category: "programming" },
   { name: "TypeScript", category: "programming" },
   { name: "React", category: "programming" },
   { name: "Node.js", category: "programming" },
@@ -23,6 +22,9 @@ const skills = [
   { name: "Kaggle", category: "datascience" },
   { name: "MCP Server", category: "datascience" },
   { name: "LangChain/LanGraph", category: "datascience" },
+  { name: "OpenCode", category: "datascience" },
+  { name: "LangFuse", category: "datascience" },
+  { name: "Ollama", category: "datascience" },
   // Data Visualisation
   { name: "Tableau", category: "dataviz" },
   { name: "PowerBI", category: "dataviz" },
@@ -39,23 +41,31 @@ const skills = [
   { name: "Elasticsearch", category: "databases" },
   { name: "Cassandra", category: "databases" },
   { name: "Neo4j", category: "databases" },
+  { name: "ChromaDB", category: "databases" },
+  { name: "Vector DB", category: "databases" },
   // Tools & Methodologies
   { name: "Jira", category: "tools" },
-  { name: "GitLab/GitHub", category: "tools" },
+  { name: "Confluence", category: "tools" },
+  { name: "Agile", category: "tools" },
   { name: "CAMUNDA (BPMN)", category: "tools" },
   { name: "Microsoft Office", category: "tools" },
   // DevOps & Cloud
+  { name: "GitLab/GitHub", category: "devops" },
   { name: "Docker", category: "devops" },
   { name: "Ansible", category: "devops" },
   { name: "JFrog", category: "devops" },
   { name: "SonarQube", category: "devops" },
   { name: "Vault", category: "devops" },
   { name: "AWS", category: "devops" },
+  { name: "GCP", category: "devops" },
+  { name: "Kubernetes (GKE)", category: "devops" },
+  { name: "Cloud Run", category: "devops" },
+  { name: "Terraform", category: "devops" },
   { name: "GitLab CI/CD", category: "devops" },
 ];
 
 
-const categories = ["all", "programming", "datascience", "dataviz", "databases", "tools", "devops"];
+const categories = ["all", "programming","devops", "datascience","databases", "dataviz", "tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");

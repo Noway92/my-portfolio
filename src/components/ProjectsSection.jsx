@@ -67,6 +67,7 @@ const projects = [
   },
   {
     id: 5,
+    hidden: true,
     title: "Financial Fraud Detection",
     description: "This repository contains a Streamlit application for detecting financial fraud using machine learning models. It includes data preprocessing, model training, evaluation, and explainability features.",
     image: "/projects/Fraud.jpg",
@@ -113,6 +114,7 @@ const projects = [
   },
   {
     id: 8,
+    hidden: true,
     title: "Piano Music Generation",
     description: "This project aims to generate music using neural networks, specifically LSTM models, to predict note pitch and duration. Using this prediction, it is generating music from n notes.",
     image: "/projects/piano.jpg",
@@ -131,6 +133,7 @@ const projects = [
   },
   {
     id: 9,
+    hidden: true,
     title: "TikTok Video Generation",
     description: "This project is generating tiktok's videos. Used HeyGen API for avatar creation, OPEN AI for the story generation and Python to compile avatar video, music, stock footage, and subtitles.",
     image: "/projects/tiktok.jpg",
@@ -160,7 +163,7 @@ export const ProjectsSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.filter((project) => !project.hidden).map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}

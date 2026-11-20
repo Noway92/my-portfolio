@@ -33,6 +33,11 @@ export const HeroSection = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             My expertise spans the full AI pipeline, from understanding how models are built to effectively using them to create innovative, real-world solutions. I am particularly interested in leveraging state-of-the-art models through agent orchestration, MCP servers, and system-level integrations. I enjoy focusing on how these models can be combined, deployed, and adapted to solve concrete problems and build scalable, impactful products.
           </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+            Outside of work, I'm passionate about climbing, always
+            looking for the next route to send, and about the piano,
+            which I've been playing for over 15 years.
+          </p>
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <button
               onClick={handleScroll}

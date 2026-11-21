@@ -1049,9 +1049,10 @@ export const ClimbingBackground = () => {
       ctx.globalAlpha = 1;
       ctx.drawImage(sky.canvas, 0, 0, width, height);
       drawSkyLife(ctx, { width, height, pal, dark: colors.dark, time, clouds, birds });
-      if (width < 768) return;
+      const phone = width < 768;
 
-      for (const climber of climbers) {
+      const visibleClimbers = wide || width >= 1024 ? climbers : climbers.slice(0, 1);
+      for (const climber of visibleClimbers) {
         const left = climber.config.wall === "left";
         const cx = left ? margin : width - margin;
         const camY = climber.getCamY();
@@ -1061,7 +1062,7 @@ export const ClimbingBackground = () => {
         const { xMin, xMax } = cliffBounds(left, cx, width);
         const pad = 16;
 
-        ctx.globalAlpha = wide ? 1 : 0.45;
+        ctx.globalAlpha = wide ? 1 : phone ? 0.3 : 0.45;
         for (let k = first; k <= last; k++) {
           const id = `${climber.config.wall}:${k}`;
           let chunk = chunks.get(id);
@@ -1084,7 +1085,7 @@ export const ClimbingBackground = () => {
           if (wall === climber.config.wall && (Number(k) < first - 1 || Number(k) > last + 1)) chunks.delete(id);
         }
 
-        drawClimberLayer(ctx, climber, { cx, height, colors, climberAlpha: wide ? 1 : 0.35 });
+        drawClimberLayer(ctx, climber, { cx, height, colors, climberAlpha: wide ? 1 : phone ? 0.3 : 0.35 });
       }
       ctx.globalAlpha = 1;
     };

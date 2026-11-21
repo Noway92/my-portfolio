@@ -25,7 +25,7 @@ Ouvrir [http://localhost:3000](http://localhost:3000)
 chaînes enneigées en parallaxe, nuages et oiseaux, encadrés par deux falaises de roche. Un grimpeur à droite et une
 grimpeuse (queue de cheval animée) à gauche montent chacun leur voie à l'infini
 (mouvements main/pied avec IK, et de temps en temps un « dyno » : saut pour attraper une prise plus haute).
-Sous 768 px de large, seuls le ciel et les montagnes sont affichés.
+Sous 1024 px de large, seul le grimpeur de droite reste (plus transparent, surtout sous 768 px pour garder le texte lisible).
 Quand on scrolle vers le haut, les grimpeurs chutent : ils sont retenus par la corde sur la dernière dégaine mousquetonnée,
 rebondissent, se balancent puis reprennent les prises et repartent.
 Les grimpeurs (tenue, côté, rythme) se configurent dans le tableau `CLIMBERS` en haut du fichier.
